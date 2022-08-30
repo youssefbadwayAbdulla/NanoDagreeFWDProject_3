@@ -17,6 +17,7 @@ import androidx.core.app.NotificationCompat
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.content_main.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         custom_button.setOnClickListener {
+        custom_button.setButtonState(ButtonState.Loading)
             download()
         }
     }
@@ -101,9 +103,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun customButtonDownload(view: View) {
-        download()
-    }
+//    fun customButtonDownload(view: View) {
+//       // view.custom_button.
+//        download()
+//
+//
+//    }
 
 
 }
